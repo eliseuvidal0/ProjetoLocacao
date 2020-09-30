@@ -1,0 +1,37 @@
+﻿<Window x:Class="ProjetoLocacao.View.frmPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLocacao.View"
+        mc:Ignorable="d"
+        Title="Projeto Locação - WPF" Height="450" Width="800" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
+    <Grid>
+        <Menu VerticalAlignment="Top" HorizontalAlignment="Center" Height="30" Width="215" >
+            <MenuItem Header="_Buscar">
+                <MenuItem Header="Buscar Clientes"/>
+                <MenuItem Header="Buscar Funcionários"/>
+                <MenuItem Header="Buscar Veículos"/>
+                <MenuItem Header="Buscar Locações"/>
+                <MenuItem Header="Buscar Devoluções"/>
+            </MenuItem>
+            <MenuItem Header="_Cadastrar">
+                <MenuItem x:Name="menuCadastrarCliente" Header="Novo Cliente" Click="menuCadastrarCliente_Click"/>
+                <MenuItem x:Name="menuCadastrarAgente" Header="Novo Agente" Click="menuCadastrarAgente_Click"/>
+                <MenuItem x:Name="menuCadastrarVeiculo" Header="Novo Veículo" Click="menuCadastrarVeiculo_Click"/>
+                <MenuItem x:Name="menuCadastrarLocacao" Header="Nova Locação"/>
+                <MenuItem Header="Devolução do Veículo" />
+            </MenuItem>
+            <MenuItem Header="_Consultar">
+                <MenuItem Header="Consultar Clientes"/>
+                <MenuItem Header="Consultar Funcionários"/>
+                <MenuItem Header="Consultar Veículos"/>
+                <MenuItem Header="Consultar Locações"/>
+                <MenuItem Header="Consultar Devoluções"/>
+            </MenuItem>
+            <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click"/>
+        </Menu>
+
+
+    </Grid>
+</Window>
