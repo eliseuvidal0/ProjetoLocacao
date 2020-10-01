@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLocacao.View"
         mc:Ignorable="d"
-        Title="frmCadastrarVeiculo" Height="450" Width="600" FontSize="16">
+        Title="Cadastro de Veículos - WPF" Height="450" Width="600" FontSize="16">
     <Grid>
         <Label Content="Placa:" HorizontalAlignment="Left" Margin="140,40,0,0" VerticalAlignment="Top" />
         <Label Content="Tipo:" HorizontalAlignment="Left" Margin="144,80,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>

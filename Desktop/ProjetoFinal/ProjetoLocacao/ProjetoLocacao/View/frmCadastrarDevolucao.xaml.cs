@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ProjetoLocacao.DAL;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ProjetoLocacao.View
 {
@@ -20,6 +11,27 @@ namespace ProjetoLocacao.View
         public frmCadastrarDevolucao()
         {
             InitializeComponent();
+            clientesDevolucao.Focus();
         }
+
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //carregar dados do cliente
+            clientesDevolucao.ItemsSource = ClienteDAO.Listar();
+            clientesDevolucao.DisplayMemberPath = "nome";
+            clientesDevolucao.SelectedValuePath = "id";
+
+            //carregar dados do veiculo
+            veiculosDevolucao.ItemsSource = VeiculoDAO.Listar();
+            veiculosDevolucao.DisplayMemberPath = "modelo";
+            veiculosDevolucao.SelectedValuePath = "id";
+        }
+        private void btnSalvarEntrega_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 }

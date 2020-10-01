@@ -16,6 +16,10 @@ namespace ProjetoLocacao.Model
         public double totalLocacao { get; set; }
         public DateTime previsaoEntrega { get; set; }
         public DateTime criadoEm { get; set; }
+        public DateTime dataEntrega { get; set; }
+        // valor a ser cobrado a mais caso exceda o período inicial
+        public double custoVariavel { get; set; }
+        public bool devolvido { get; set; }
 
         public Locacao()
         {
@@ -23,6 +27,8 @@ namespace ProjetoLocacao.Model
             this.cliente = new Cliente();
             this.veiculo = new Veiculo();
             this.criadoEm = DateTime.Now;
+            this.devolvido = false;
+            this.custoVariavel = 0;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using ProjetoLocacao.Model;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoLocacao.DAL
@@ -20,7 +21,8 @@ namespace ProjetoLocacao.DAL
                 return true;
             }
         }
-
+        public static Veiculo BuscarPorId(int id) => _context.veiculos.Find(id);
+        public static List<Veiculo> Listar() => _context.veiculos.ToList();
         public static Veiculo BuscarPlaca(string placa) => _context.veiculos.FirstOrDefault(x => x.placa.Equals(placa));
     }
 }

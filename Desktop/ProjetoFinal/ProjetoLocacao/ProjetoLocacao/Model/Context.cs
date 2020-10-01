@@ -8,7 +8,6 @@ namespace ProjetoLocacao.Model
         public DbSet<Agente> agentes { get; set; }
         public DbSet<Veiculo> veiculos { get; set; }
         public DbSet<Locacao> locacoes { get; set; }
-        public DbSet<Devolucao> devolucoes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,5 +1,6 @@
 ﻿using ProjetoLocacao.Model;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoLocacao.DAL
@@ -21,6 +22,8 @@ namespace ProjetoLocacao.DAL
                 return true;
             }
         }
+        public static Cliente BuscarPorId(int id) => _context.clientes.Find(id);
+        public static List<Cliente> Listar() => _context.clientes.ToList();
         public static Cliente BuscarCpf(string cpf) => _context.clientes.FirstOrDefault(x => x.cpf.Equals(cpf));
 
         public static int CalcularIdade(DateTime data)
