@@ -1,0 +1,29 @@
+﻿<Window x:Class="ProjetoLocacao.View.frmCadastrarLocacao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLocacao.View"
+        mc:Ignorable="d"
+        Title="Cadastro de Locação - WPF" Height="450" Width="600" FontSize="16" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="160,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Veículo:" HorizontalAlignment="Left" Margin="160,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Funcionário:" HorizontalAlignment="Left" Margin="130,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Forma de pagamento:" HorizontalAlignment="Left" Margin="60,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Previsão de entrega:" HorizontalAlignment="Left" Margin="72,200,0,0" VerticalAlignment="Top"/>
+
+        <ComboBox x:Name="cboClientes" HorizontalAlignment="Left" Margin="240,45,0,0" VerticalAlignment="Top" Width="180" TabIndex="0"/>
+        <ComboBox x:Name="cboVeiculos" HorizontalAlignment="Left" Margin="240,85,0,0" VerticalAlignment="Top" Width="180" TabIndex="1"/>
+        <ComboBox x:Name="cboFuncionarios" HorizontalAlignment="Left" Margin="240,125,0,0" VerticalAlignment="Top" Width="180" TabIndex="2"/>
+        <ComboBox x:Name="cboFormaPagamento" HorizontalAlignment="Left" Margin="240,165,0,0" VerticalAlignment="Top" Width="180" TabIndex="3">
+            <ComboBoxItem Content="Dinheiro"/>
+            <ComboBoxItem Content="Cartão de débito"/>
+            <ComboBoxItem Content="Cartão de crédito"/>
+        </ComboBox>
+        <DatePicker x:Name="txtDataEntrega" HorizontalAlignment="Left" Margin="240,205,0,0" VerticalAlignment="Top" Width="180" TabIndex="4" />
+
+        <Button x:Name="Salvar" Content="Salvar" HorizontalAlignment="Left" Margin="370,250,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

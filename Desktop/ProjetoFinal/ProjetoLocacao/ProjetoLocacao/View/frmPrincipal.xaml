@@ -19,7 +19,7 @@
                 <MenuItem x:Name="menuCadastrarCliente" Header="Novo Cliente" Click="menuCadastrarCliente_Click"/>
                 <MenuItem x:Name="menuCadastrarAgente" Header="Novo Agente" Click="menuCadastrarAgente_Click"/>
                 <MenuItem x:Name="menuCadastrarVeiculo" Header="Novo Veículo" Click="menuCadastrarVeiculo_Click"/>
-                <MenuItem x:Name="menuCadastrarLocacao" Header="Nova Locação"/>
+                <MenuItem x:Name="menuCadastrarLocacao" Header="Nova Locação" Click="menuCadastrarLocacao_Click"/>
                 <MenuItem x:Name="menuCadastrarDevolucao" Header="Devolução do Veículo" Click="menuCadastrarDevolucao_Click" />
             </MenuItem>
             <MenuItem Header="_Consultar">

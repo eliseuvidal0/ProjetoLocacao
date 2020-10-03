@@ -1,4 +1,5 @@
 ﻿using ProjetoLocacao.Model;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoLocacao.DAL
@@ -21,6 +22,8 @@ namespace ProjetoLocacao.DAL
             }
 
         }
+        public static Locacao BuscarPorId(int id) => _context.locacoes.Find(id);
+        public static List<Locacao> Listar() => _context.locacoes.ToList();
         public static Veiculo BuscarVeiculo(string modelo) => _context.veiculos.FirstOrDefault(x => x.modelo.Equals(modelo));
 
         public static bool ValidarCatCnh(Locacao locacao)

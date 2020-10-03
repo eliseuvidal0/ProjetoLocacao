@@ -26,6 +26,8 @@ namespace ProjetoLocacao.View
             veiculosDevolucao.ItemsSource = VeiculoDAO.Listar();
             veiculosDevolucao.DisplayMemberPath = "modelo";
             veiculosDevolucao.SelectedValuePath = "id";
+
+
         }
         private void btnSalvarEntrega_Click(object sender, RoutedEventArgs e)
         {

@@ -1,4 +1,5 @@
 ﻿using ProjetoLocacao.Model;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ProjetoLocacao.DAL
@@ -19,7 +20,8 @@ namespace ProjetoLocacao.DAL
                 return true;
             }
         }
-
+        public static Agente BuscarPorId(int id) => _context.agentes.Find(id);
+        public static List<Agente> Listar() => _context.agentes.ToList();
         public static Agente BuscarCpf(string cpf) => _context.agentes.FirstOrDefault(x => x.cpf.Equals(cpf));
     }
 }

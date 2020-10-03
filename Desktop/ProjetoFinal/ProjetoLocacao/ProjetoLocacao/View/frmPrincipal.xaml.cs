@@ -54,5 +54,12 @@ namespace ProjetoLocacao.View
 
             frm.ShowDialog();
         }
+
+        private void menuCadastrarLocacao_Click(object sender, RoutedEventArgs e)
+        {
+            frmCadastrarLocacao frm = new frmCadastrarLocacao();
+
+            frm.ShowDialog();
+        }
     }
 }
