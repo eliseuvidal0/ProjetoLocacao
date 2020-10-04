@@ -1,0 +1,17 @@
+﻿<Window x:Class="ProjetoLocacao.View.frmCadastrarDevolucao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoLocacao.View"
+        mc:Ignorable="d"
+        Title="Cadastro de Devolução - WPF" Height="450" Width="550" FontSize="16" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Cliente:" HorizontalAlignment="Left" Margin="130,40,0,0" VerticalAlignment="Top"/>
+        <Label Content="Veículo:" HorizontalAlignment="Left" Margin="130,80,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="clientesDevolucao" HorizontalAlignment="Left" Margin="240,45,0,0" VerticalAlignment="Top" Width="180" TabIndex="0"/>
+        <ComboBox x:Name="veiculosDevolucao" HorizontalAlignment="Left" Margin="240,85,0,0" VerticalAlignment="Top" Width="180" TabIndex="1"/>
+        <Button x:Name="btnSalvarEntrega" Content="Entregar" HorizontalAlignment="Left" Margin="357,150,0,0" VerticalAlignment="Top" TabIndex="2" Click="btnSalvarEntrega_Click"/>
+
+    </Grid>
+</Window>
