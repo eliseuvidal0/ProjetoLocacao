@@ -7,7 +7,17 @@
         mc:Ignorable="d"
         Title="frmConsultarLocacao" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dtaLocacao" IsEnabled="False"/>
+        <DataGrid x:Name="dtaLocacao" IsEnabled="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="lstId" Header="Id" Binding="{Binding Id}"/>
+                <DataGridTextColumn x:Name="lstCliente" Header="Cliente" Binding="{Binding Cliente}"/>
+                <DataGridTextColumn x:Name="lstAgente" Header="Agente" Binding="{Binding Agente}"/>
+                <DataGridTextColumn x:Name="lstVeiculo" Header="Veiculo" Binding="{Binding Veiculo}"/>
+                <DataGridTextColumn x:Name="lstDevolvido" Header="Devolvido" Binding="{Binding Locacao}"/>
+                <DataGridTextColumn x:Name="lstPrevisaoEntrega" Header="Previsão de Entrega" Binding="{Binding Previsao}"/>
+                
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 </Window>

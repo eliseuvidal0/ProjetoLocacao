@@ -4,11 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ProjetoLocacao.Model
 {
     [Table("Clientes")]
-    class Cliente : Pessoa
+    public class Cliente : Pessoa
     {
-        public DateTime nascimento { get; set; }
-        public String telefone { get; set; }
-        public String cnh { get; set; }
+        public virtual DateTime nascimento { get; set; }
+        public virtual String telefone { get; set; }
+        public virtual String cnh { get; set; }
 
     }
 }

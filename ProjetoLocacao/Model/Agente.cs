@@ -3,7 +3,7 @@
 namespace ProjetoLocacao.Model
 {
     [Table("Funcionarios")]
-    class Agente : Pessoa
+    public class Agente : Pessoa
     {
     }
 }

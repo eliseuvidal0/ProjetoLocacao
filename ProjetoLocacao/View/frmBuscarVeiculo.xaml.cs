@@ -22,6 +22,7 @@ namespace ProjetoLocacao.View
         public frmBuscarVeiculo()
         {
             InitializeComponent();
+            txtPlaca.Focus();
         }
 
         Veiculo veiculo = new Veiculo();
@@ -60,11 +61,24 @@ namespace ProjetoLocacao.View
             {
                 VeiculoDAO.Remover(veiculo);
                 MessageBox.Show("Veiculo removido com sucesso!!!", "Veiculo - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimparFormulario();
+
+                txtPlaca.IsEnabled = true;
+                btnBuscar.IsEnabled = true;
+                btnRemover.IsEnabled = false;
             }
             else
             {
                 MessageBox.Show("Veiculo não foi removido!!!", "Veiculo - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void LimparFormulario()
+        {
+            txtPlaca.Clear();
+            txtMarca.Clear();
+            txtModelo.Clear();
+            txtCor.Clear();
+            txtValorDiaria.Clear();
         }
     }
 }

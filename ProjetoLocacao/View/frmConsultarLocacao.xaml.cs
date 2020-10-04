@@ -1,5 +1,6 @@
 ﻿using ProjetoLocacao.DAL;
 using ProjetoLocacao.Model;
+using ProjetoLocacao.Utility;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +24,19 @@ namespace ProjetoLocacao.View
         {
             InitializeComponent();
 
-            dtaLocacao.ItemsSource = LocacaoDAO.Listar();
+            foreach (Locacao l in LocacaoDAO.Listar())
+            {
+                dtaLocacao.Items.Add(new DataGridItems
+                {
+                    Id = l.id.ToString(),
+                    Cliente = l.cliente.nome.ToString(),
+                    Agente = l.agente.nome.ToString(),
+                    Veiculo = l.veiculo.modelo,
+                    Locacao = l.devolvido.ToString(),
+                    Previsao = l.previsaoEntrega.ToString()
+                });
+            }
+
         }
     }
 }

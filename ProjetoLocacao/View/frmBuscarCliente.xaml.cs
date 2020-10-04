@@ -46,6 +46,7 @@ namespace ProjetoLocacao.View
                     txtCnh.IsEnabled = true;
                     btnAlterar.IsEnabled = true;
                     btnRemover.IsEnabled = true;
+                    btnBuscar.IsEnabled = false;
                 }
                 else
                 {
@@ -69,6 +70,15 @@ namespace ProjetoLocacao.View
                 cliente.cnh = txtCnh.Text;
                 ClienteDAO.Alterar(cliente);
                 MessageBox.Show("Cliente alterado com sucesso!!!", "Cliente - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimparFormulario();
+
+                txtNome.IsEnabled = false;
+                txtEmail.IsEnabled = false;
+                txtTelefone.IsEnabled = false;
+                txtCnh.IsEnabled = false;
+                btnAlterar.IsEnabled = false;
+                btnRemover.IsEnabled = false;
+                btnBuscar.IsEnabled = true;
             }
             else
             {
@@ -81,12 +91,29 @@ namespace ProjetoLocacao.View
             if (cliente != null)
             {
                 ClienteDAO.Remover(cliente);
-                MessageBox.Show("Cliente removido com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Cliente removido com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimparFormulario();
+
+                txtNome.IsEnabled = false;
+                txtEmail.IsEnabled = false;
+                txtTelefone.IsEnabled = false;
+                txtCnh.IsEnabled = false;
+                btnAlterar.IsEnabled = false;
+                btnRemover.IsEnabled = false;
+                btnBuscar.IsEnabled = true;
             }
             else
             {
                 MessageBox.Show("Cliente não foi removido!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void LimparFormulario()
+        {
+            txtNome.Clear();
+            txtCpf.Clear();
+            txtEmail.Clear();
+            txtTelefone.Clear();
+            txtCnh.Text = " ";
         }
     }
 }

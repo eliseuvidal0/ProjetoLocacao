@@ -22,6 +22,12 @@ namespace ProjetoLocacao.DAL
             }
 
         }
+
+        /**
+         * 
+         *  _context.Database.ExecuteSqlRaw("ALTER TABLE NomeDaTabela NOCHECK CONSTRAINT FK_NomeDaFK");
+         * 
+         */
         public static Locacao BuscarPorId(int id) => _context.locacoes.Find(id);
         public static List<Locacao> Listar() => _context.locacoes.ToList();
         public static Veiculo BuscarVeiculo(string modelo) => _context.veiculos.FirstOrDefault(x => x.modelo.Equals(modelo));

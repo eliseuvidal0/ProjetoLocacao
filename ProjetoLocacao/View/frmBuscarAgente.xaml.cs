@@ -1,5 +1,6 @@
 ﻿using ProjetoLocacao.DAL;
 using ProjetoLocacao.Model;
+using ProjetoLocacao.Utility;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -42,6 +43,7 @@ namespace ProjetoLocacao.View
                     txtEmail.IsEnabled = true;
                     btnAlterar.IsEnabled = true;
                     btnRemover.IsEnabled = true;
+                    btnBuscar.IsEnabled = false;
                 }
                 else
                 {
@@ -63,6 +65,13 @@ namespace ProjetoLocacao.View
                 agente.email = txtEmail.Text;
                 AgenteDAO.Alterar(agente);
                 MessageBox.Show("Funcionário alterado com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimparFormulario();
+
+                txtNome.IsEnabled = false;
+                txtEmail.IsEnabled = false;
+                btnAlterar.IsEnabled = false;
+                btnRemover.IsEnabled = false;
+                btnBuscar.IsEnabled = true;
             }
             else
             {
@@ -75,12 +84,26 @@ namespace ProjetoLocacao.View
             if(agente != null)
             {
                 AgenteDAO.Remover(agente);
-                MessageBox.Show("Funcionário removido com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Funcionário removido com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
+                LimparFormulario();
+
+                txtNome.IsEnabled = false;
+                txtEmail.IsEnabled = false;
+                btnAlterar.IsEnabled = false;
+                btnRemover.IsEnabled = false;
+                btnBuscar.IsEnabled = true;
             }
             else
             {
                 MessageBox.Show("Funcionário não foi removido!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void LimparFormulario()
+        {
+            txtNome.Clear();
+            txtCpf.Clear();
+            txtEmail.Clear();
         }
     }
 }

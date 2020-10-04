@@ -27,6 +27,7 @@ namespace ProjetoLocacao.DAL
 
         public static void Remover(Veiculo veiculo)
         {
+            //_context.Database.ExecuteSqlRaw("ALTER TABLE NomeDaTabela NOCHECK CONSTRAINT FK_NomeDaFK");
             _context.veiculos.Remove(veiculo);
             _context.SaveChanges();
         }

@@ -5,18 +5,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ProjetoLocacao.Model
 {
     [Table("veiculos")]
-    class Veiculo
+    public class Veiculo
     {
         [Key]
-        public int id { get; set; }
-        public string placa { get; set; }
-        public string tipo { get; set; }
-        public string marca { get; set; }
-        public string modelo { get; set; }
-        public string cor { get; set; }
-        public double valorDiaria { get; set; }
-        public bool locado { get; set; }
-        public DateTime criadoEm { get; set; }
+        public virtual int id { get; set; }
+        public virtual string placa { get; set; }
+        public virtual string tipo { get; set; }
+        public virtual string marca { get; set; }
+        public virtual string modelo { get; set; }
+        public virtual string cor { get; set; }
+        public virtual double valorDiaria { get; set; }
+        public virtual bool locado { get; set; }
+        public virtual DateTime criadoEm { get; set; }
 
         public Veiculo()
         {

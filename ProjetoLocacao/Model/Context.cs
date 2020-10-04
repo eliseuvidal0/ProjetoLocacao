@@ -15,7 +15,7 @@ namespace ProjetoLocacao.Model
                                         Database=BancoLocacao;
                                         User ID=eliseu;
                                         Password=Positivo123;
-                                        trusted_Connection=false");
+                                        trusted_Connection=false").UseLazyLoadingProxies();
         }
     }
 }
