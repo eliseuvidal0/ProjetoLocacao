@@ -5,19 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLocacao.View"
         mc:Ignorable="d"
-        Title="frmBuscarCliente" Height="450" Width="800">
+        Title="Buscar Clientes" Height="450" Width="800">
     <Grid>
-        <Label Content="Nome:" HorizontalAlignment="Left" Margin="141,41,0,0" VerticalAlignment="Top"/>
-        <Label Content="CPF:" HorizontalAlignment="Left" Margin="156,80,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="CPF:" HorizontalAlignment="Left" Margin="141,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="156,80,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label Content="Email:" HorizontalAlignment="Left" Margin="145,121,0,0" VerticalAlignment="Top"/>
         <Label Content="Telefone:" HorizontalAlignment="Left" Margin="129,161,0,0" VerticalAlignment="Top"/>
         <Label Content="Categoria CNH:" HorizontalAlignment="Left" Margin="94,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="240,45,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="0" Grid.Column="1" IsEnabled="False"/>
-        <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="240,85,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="1" Grid.Column="1"/>
+        <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="240,45,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="0" Grid.Column="1"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="240,85,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="1" Grid.Column="1" IsEnabled="False"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="240,125,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="2" Grid.Column="1" IsEnabled="False"/>
         <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Margin="240,165,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="3" Grid.Column="1" IsEnabled="False"/>
+        <ComboBox x:Name="cboCnh" HorizontalAlignment="Left" Margin="240,205,0,0" VerticalAlignment="Top" Width="180" TabIndex="4">
+            <ComboBoxItem Content="A"/>
+            <ComboBoxItem Content="B"/>
+            <ComboBoxItem Content="C"/>
+            <ComboBoxItem Content="D"/>
+            <ComboBoxItem Content="E"/>
+            <ComboBoxItem Content="AB"/>
+            <ComboBoxItem Content="AC"/>
+            <ComboBoxItem Content="AD"/>
+            <ComboBoxItem Content="AE"/>
+        </ComboBox>
 
-        <TextBox x:Name="txtCnh" HorizontalAlignment="Left" Margin="240,0,0,0" VerticalAlignment="Center" Width="180" TabIndex="5" IsEnabled="False"/>
         <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="89,245,0,0" VerticalAlignment="Top" Height="29" Width="107" Click="btnBuscar_Click"/>
         <Button x:Name="btnRemover" Content="Remover" HorizontalAlignment="Left" Margin="313,245,0,0" VerticalAlignment="Top" Height="29" Width="107" Click="btnRemover_Click" IsEnabled="False"/>
         <Button x:Name="btnAlterar" Content="Alterar" HorizontalAlignment="Left" Margin="201,245,0,0" VerticalAlignment="Top" Height="29" Width="107" Click="btnAlterar_Click" IsEnabled="False"/>

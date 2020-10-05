@@ -27,7 +27,7 @@ namespace ProjetoLocacao.View
                 agente = new Agente
                 {
                     nome = txtNome.Text,
-                    cpf = txtCpf.Text,
+                    cpf = Validacao.Formatar(txtCpf.Text),
                     email = txtEmail.Text
 
                 };

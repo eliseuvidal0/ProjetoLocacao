@@ -15,21 +15,23 @@ namespace ProjetoLocacao.DAL
             }
             else
             {
+                int dias = locacao.previsaoEntrega.Day - locacao.criadoEm.Day;
+                locacao.totalLocacao = locacao.veiculo.valorDiaria * dias;
+                locacao.veiculo.locado = true;
+
                 _context.locacoes.Add(locacao);
                 _context.SaveChanges();
                 locacao.veiculo.locado = true;
-                return false;
+                return true;
             }
 
         }
 
-        /**
-         * 
-         *  _context.Database.ExecuteSqlRaw("ALTER TABLE NomeDaTabela NOCHECK CONSTRAINT FK_NomeDaFK");
-         * 
-         */
+
         public static Locacao BuscarPorId(int id) => _context.locacoes.Find(id);
         public static List<Locacao> Listar() => _context.locacoes.ToList();
+        public static List<Locacao> ListarLocado() => _context.locacoes.Where(x => x.devolvido == false).ToList();
+        public static List<Locacao> ListarLocPorCli(string cpf) => _context.locacoes.Where(x => x.cliente.cpf == cpf).ToList();
         public static Veiculo BuscarVeiculo(string modelo) => _context.veiculos.FirstOrDefault(x => x.modelo.Equals(modelo));
 
         public static bool ValidarCatCnh(Locacao locacao)
@@ -38,18 +40,39 @@ namespace ProjetoLocacao.DAL
             {
                 return false;
             }
-            else if (locacao.veiculo.tipo == "Van" && locacao.cliente.cnh == "B" || locacao.cliente.cnh == "A"
-                        || locacao.cliente.cnh == "AB")
+            else if (locacao.veiculo.tipo == "Caminhão" && locacao.cliente.cnh == "B")
             {
                 return false;
             }
-            else if (locacao.veiculo.tipo == "Moto" && locacao.cliente.cnh == "B" || locacao.cliente.cnh == "C"
-                       || locacao.cliente.cnh == "D" || locacao.cliente.cnh == "E")
+            else if (locacao.veiculo.tipo == "Caminhão" && locacao.cliente.cnh == "A")
             {
                 return false;
             }
-            return true;
+            else if (locacao.veiculo.tipo == "Caminhão" && locacao.cliente.cnh == "AB")
+            {
+                return false;
+            }
+            else if (locacao.veiculo.tipo == "Moto" && locacao.cliente.cnh == "B")
+            {
+                return false;
+            }
+            else if (locacao.veiculo.tipo == "Moto" && locacao.cliente.cnh == "C")
+            {
+                return false;
+            }
+            else if (locacao.veiculo.tipo == "Moto" && locacao.cliente.cnh == "D")
+            {
+                return false;
+            }
+            else if (locacao.veiculo.tipo == "Moto" && locacao.cliente.cnh == "E")
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
-     
+
     }
 }

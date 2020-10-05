@@ -1,16 +1,7 @@
 ﻿using ProjetoLocacao.DAL;
 using ProjetoLocacao.Model;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ProjetoLocacao.View
 {
@@ -19,16 +10,44 @@ namespace ProjetoLocacao.View
     /// </summary>
     public partial class frmBuscarLocacao : Window
     {
+        private List<dynamic> locacoes = new List<dynamic>();
         public frmBuscarLocacao()
         {
             InitializeComponent();
+            txtCpf.Focus();
         }
 
-        Locacao locacao = new Locacao();
 
-        private void btnBuscar_Click(object sender, RoutedEventArgs e)
+        private void btnBuscar_Click_1(object sender, RoutedEventArgs e)
         {
-            
+            Cliente cli = ClienteDAO.BuscarCpf(txtCpf.Text);
+            if (cli != null)
+            {
+                string status;
+                foreach (Locacao loc in LocacaoDAO.ListarLocPorCli(txtCpf.Text))
+                {
+                    if (loc.devolvido)
+                    {
+                        status = "Entregue";
+                    }
+                    else
+                    {
+                        status = "Com cliente";
+                    }
+                    dynamic item = new
+                    {
+                        cliente = cli.nome,
+                        veiculo = loc.veiculo.modelo,
+                        prevEntrega = loc.previsaoEntrega.ToString(),
+                        situacao = status,
+                        preco = loc.totalLocacao.ToString("C2")
+                    };
+                    locacoes.Add(item);
+                }
+                txtCpf.Clear();
+                dtaLocacoes.ItemsSource = locacoes;
+            }
         }
+
     }
 }

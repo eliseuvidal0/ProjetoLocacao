@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace ProjetoLocacao.Model
@@ -16,6 +15,5 @@ namespace ProjetoLocacao.Model
         public virtual String nome { get; set; }
         public virtual String email { get; set; }
         public virtual DateTime criadoEm { get; set; }
-        public virtual List<Locacao> locacoes { get; set; }
     }
 }

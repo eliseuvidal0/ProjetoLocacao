@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ProjetoLocacao.Utility
+﻿namespace ProjetoLocacao.Utility
 {
     class DataGridItems
     {
@@ -12,6 +8,7 @@ namespace ProjetoLocacao.Utility
         public string Veiculo { get; set; }
         public string Locacao { get; set; }
         public string Previsao { get; set; }
+        public string Preco { get; set; }
 
     }
 }

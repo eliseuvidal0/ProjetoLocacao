@@ -28,7 +28,7 @@ namespace ProjetoLocacao.View
                 cliente = new Cliente
                 {
                     nome = txtNome.Text,
-                    cpf = txtCpf.Text,
+                    cpf = Validacao.Formatar(txtCpf.Text),
                     email = txtEmail.Text,
                     telefone = txtTelefone.Text,
                     nascimento = Convert.ToDateTime(txtNascimento.Text),

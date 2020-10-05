@@ -13,7 +13,6 @@
                 <MenuItem x:Name="menuBuscarAgente" Header="Buscar Funcionários" Click="menuBuscarAgente_Click"/>
                 <MenuItem x:Name="menuBuscarVeiculo" Header="Buscar Veículos" Click="menuBuscarVeiculo_Click"/>
                 <MenuItem x:Name="menuBuscarLocacao" Header="Buscar Locações" Click="menuBuscarLocacao_Click"/>
-                <MenuItem x:Name="menuBuscarDevolucao" Header="Buscar Devoluções" Click="menuBuscarDevolucao_Click"/>
             </MenuItem>
             <MenuItem Header="_Cadastrar">
                 <MenuItem x:Name="menuCadastrarCliente" Header="Novo Cliente" Click="menuCadastrarCliente_Click"/>
@@ -27,7 +26,6 @@
                 <MenuItem x:Name="menuConsultarAgente" Header="Consultar Funcionários" Click="menuConsultarAgente_Click"/>
                 <MenuItem x:Name="menuConsultarVeiculo" Header="Consultar Veículos" Click="menuConsultarVeiculo_Click"/>
                 <MenuItem x:Name="menuConsultarlocacao" Header="Consultar Locações" Click="menuConsultarLocacao_Click"/>
-                <MenuItem x:Name="menuConsultarDevolucao" Header="Consultar Devoluções" Click="menuConsultarDevolucao_Click"/>
             </MenuItem>
             <MenuItem x:Name="menuSair" Header="_Sair" Click="menuSair_Click"/>
         </Menu>

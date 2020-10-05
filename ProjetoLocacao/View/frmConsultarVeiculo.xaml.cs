@@ -1,15 +1,7 @@
 ﻿using ProjetoLocacao.DAL;
-using System;
+using ProjetoLocacao.Model;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ProjetoLocacao.View
 {
@@ -18,11 +10,40 @@ namespace ProjetoLocacao.View
     /// </summary>
     public partial class frmConsultarVeiculo : Window
     {
+        private List<dynamic> veiculos = new List<dynamic>();
         public frmConsultarVeiculo()
         {
             InitializeComponent();
 
-            dtaVeiculo.ItemsSource = VeiculoDAO.Listar();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            string status;
+            foreach (Veiculo vec in VeiculoDAO.Listar())
+            {
+                if (vec.locado)
+                {
+                    status = "Locado";
+                }
+                else
+                {
+                    status = "Disponível";
+                }
+                dynamic item = new
+                {
+                    marca = vec.marca,
+                    modelo = vec.modelo,
+                    placa = vec.placa,
+                    tipo = vec.tipo,
+                    cor = vec.cor,
+                    valorDiaria = vec.valorDiaria,
+                    situacao = status
+                };
+
+                veiculos.Add(item);
+            }
+            dtaVeiculos.ItemsSource = veiculos;
         }
     }
 }

@@ -1,16 +1,7 @@
 ﻿using ProjetoLocacao.DAL;
 using ProjetoLocacao.Model;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ProjetoLocacao.View
 {
@@ -38,12 +29,12 @@ namespace ProjetoLocacao.View
                     txtCpf.Text = cliente.cpf;
                     txtEmail.Text = cliente.email;
                     txtTelefone.Text = cliente.telefone;
-                    txtCnh.Text = cliente.cnh;
+                    cboCnh.Text = cliente.cnh;
 
                     txtNome.IsEnabled = true;
                     txtEmail.IsEnabled = true;
                     txtTelefone.IsEnabled = true;
-                    txtCnh.IsEnabled = true;
+                    cboCnh.IsEnabled = true;
                     btnAlterar.IsEnabled = true;
                     btnRemover.IsEnabled = true;
                     btnBuscar.IsEnabled = false;
@@ -67,7 +58,7 @@ namespace ProjetoLocacao.View
                 cliente.cpf = txtCpf.Text;
                 cliente.email = txtEmail.Text;
                 cliente.telefone = txtTelefone.Text;
-                cliente.cnh = txtCnh.Text;
+                cliente.cnh = cboCnh.Text;
                 ClienteDAO.Alterar(cliente);
                 MessageBox.Show("Cliente alterado com sucesso!!!", "Cliente - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
                 LimparFormulario();
@@ -75,7 +66,7 @@ namespace ProjetoLocacao.View
                 txtNome.IsEnabled = false;
                 txtEmail.IsEnabled = false;
                 txtTelefone.IsEnabled = false;
-                txtCnh.IsEnabled = false;
+                cboCnh.IsEnabled = false;
                 btnAlterar.IsEnabled = false;
                 btnRemover.IsEnabled = false;
                 btnBuscar.IsEnabled = true;
@@ -97,7 +88,7 @@ namespace ProjetoLocacao.View
                 txtNome.IsEnabled = false;
                 txtEmail.IsEnabled = false;
                 txtTelefone.IsEnabled = false;
-                txtCnh.IsEnabled = false;
+                cboCnh.IsEnabled = false;
                 btnAlterar.IsEnabled = false;
                 btnRemover.IsEnabled = false;
                 btnBuscar.IsEnabled = true;
@@ -113,7 +104,7 @@ namespace ProjetoLocacao.View
             txtCpf.Clear();
             txtEmail.Clear();
             txtTelefone.Clear();
-            txtCnh.Text = " ";
+            cboCnh.Text = " ";
         }
     }
 }

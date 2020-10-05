@@ -100,7 +100,7 @@ namespace ProjetoLocacao.Utility
         public static string Formatar(string cpf) => cpf.Replace(".", "").Replace("-", "");
         public static bool ValidarPlaca(string placa)
         {
-            if (placa.Length == 8)
+            if (placa.Length == 7)
             {
                 Regex regex = new Regex("[A-Z]{3}[0-9]{1}[A-Z]{1}[0-9]{2}");
                 if (regex.IsMatch(placa))

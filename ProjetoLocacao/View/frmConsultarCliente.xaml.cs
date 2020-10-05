@@ -1,15 +1,7 @@
 ﻿using ProjetoLocacao.DAL;
-using System;
+using ProjetoLocacao.Model;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ProjetoLocacao.View
 {
@@ -18,11 +10,32 @@ namespace ProjetoLocacao.View
     /// </summary>
     public partial class frmConsultarCliente : Window
     {
+        private List<dynamic> clientes = new List<dynamic>();
         public frmConsultarCliente()
         {
             InitializeComponent();
+        }
 
-            dtaCliente.ItemsSource = ClienteDAO.Listar();
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (Cliente cli in ClienteDAO.Listar())
+            {
+
+                dynamic item = new
+                {
+                    nome = cli.nome,
+                    cpf = cli.cpf,
+                    email = cli.email,
+                    telefone = cli.telefone,
+                    cnh = cli.cnh,
+                    idade = ClienteDAO.CalcularIdade(cli.nascimento)
+                };
+
+                clientes.Add(item);
+
+            }
+
+            dtaClientes.ItemsSource = clientes;
         }
     }
 }

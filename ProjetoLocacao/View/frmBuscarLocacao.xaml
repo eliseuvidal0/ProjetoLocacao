@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLocacao.View"
         mc:Ignorable="d"
-        Title="frmBuscarLocacao" Height="450" Width="800">
+        Title="Buscar Locação por cliente - WPF" Height="450" Width="800">
     <Grid>
-        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="10,337,0,0" VerticalAlignment="Top" Height="29" Width="107" Click="btnBuscar_Click"/>
+        <Label Content="CPF:" HorizontalAlignment="Left" Margin="40,40,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="90,45,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="0" Grid.Column="1" />
+
+        <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="300,35,0,0" VerticalAlignment="Top" Height="29" Width="107" Click="btnBuscar_Click_1" />
+
+        <DataGrid x:Name="dtaLocacoes" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="700" Margin="13,80,0,0" Padding="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Cliente" Width="1*"
+                            Binding="{Binding cliente}"/>
+                <DataGridTextColumn Header="Veículo" Width="1*"
+                            Binding="{Binding veiculo}"/>
+                <DataGridTextColumn Header="Previsão de Entrega" Width="1*"
+                            Binding="{Binding prevEntrega}"/>
+                <DataGridTextColumn Header="Estado" Width="1*"
+                            Binding="{Binding situacao}"/>
+                <DataGridTextColumn Header="Preço Total" Width="1*"
+                            Binding="{Binding preco}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

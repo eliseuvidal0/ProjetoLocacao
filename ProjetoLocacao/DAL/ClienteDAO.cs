@@ -42,7 +42,7 @@ namespace ProjetoLocacao.DAL
         public static void Remover(Cliente cliente)
         {
             _context.clientes.Remove(cliente);
-            
+
             _context.SaveChanges();
         }
         public static void Alterar(Cliente cliente)

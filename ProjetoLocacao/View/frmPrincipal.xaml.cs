@@ -97,13 +97,6 @@ namespace ProjetoLocacao.View
             frm.ShowDialog();
         }
 
-        private void menuConsultarDevolucao_Click(object sender, RoutedEventArgs e)
-        {
-            frmConsultarDevolucao frm = new frmConsultarDevolucao();
-
-            frm.ShowDialog();
-        }
-
         private void menuBuscarCliente_Click(object sender, RoutedEventArgs e)
         {
             frmBuscarCliente frm = new frmBuscarCliente();
@@ -128,13 +121,6 @@ namespace ProjetoLocacao.View
         private void menuBuscarLocacao_Click(object sender, RoutedEventArgs e)
         {
             frmBuscarLocacao frm = new frmBuscarLocacao();
-
-            frm.ShowDialog();
-        }
-
-        private void menuBuscarDevolucao_Click(object sender, RoutedEventArgs e)
-        {
-            frmBuscarDevolucao frm = new frmBuscarDevolucao();
 
             frm.ShowDialog();
         }

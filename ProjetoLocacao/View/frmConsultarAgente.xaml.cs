@@ -1,28 +1,37 @@
 ﻿using ProjetoLocacao.DAL;
-using System;
+using ProjetoLocacao.Model;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ProjetoLocacao.View
 {
+
     /// <summary>
     /// Interaction logic for frmConsultarAgente.xaml
     /// </summary>
     public partial class frmConsultarAgente : Window
     {
+        List<dynamic> agentes = new List<dynamic>();
         public frmConsultarAgente()
         {
             InitializeComponent();
 
-            dtaAgente.ItemsSource = AgenteDAO.Listar();
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (Agente ag in AgenteDAO.Listar())
+            {
+                dynamic item = new
+                {
+                    nome = ag.nome,
+                    cpf = ag.cpf,
+                    email = ag.email
+                };
+                agentes.Add(ag);
+            }
+            dtaAgentes.ItemsSource = agentes;
         }
     }
 }

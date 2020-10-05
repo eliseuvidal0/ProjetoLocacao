@@ -5,9 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLocacao.View"
         mc:Ignorable="d"
-        Title="frmConsultarCliente" Height="450" Width="800">
+        Title="Clientes - WPF" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dtaCliente" IsEnabled="False"/>
 
+        <DataGrid x:Name="dtaClientes" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Height="350" Width="700" Margin="13,30,0,0" Padding="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nome" Width="1*"
+                            Binding="{Binding nome}"/>
+                <DataGridTextColumn Header="Cpf" Width="1*"
+                            Binding="{Binding cpf}"/>
+                <DataGridTextColumn Header="Email" Width="1*"
+                            Binding="{Binding email}"/>
+                <DataGridTextColumn Header="Telefone" Width="1*"
+                            Binding="{Binding telefone}"/>
+                <DataGridTextColumn Header="Categoria CNH" Width="1*"
+                            Binding="{Binding cnh}"/>
+                <DataGridTextColumn Header="Idade" Width="1*"
+                            Binding="{Binding idade}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
