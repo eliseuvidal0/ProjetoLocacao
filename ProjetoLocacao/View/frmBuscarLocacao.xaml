@@ -11,6 +11,7 @@
         <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="90,45,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="0" Grid.Column="1" />
 
         <Button x:Name="btnBuscar" Content="Buscar" HorizontalAlignment="Left" Margin="300,35,0,0" VerticalAlignment="Top" Height="29" Width="107" Click="btnBuscar_Click_1" />
+        <Button x:Name="btnLimpar" Content="Limpar" HorizontalAlignment="Left" Margin="412,35,0,0" VerticalAlignment="Top" Height="29" Width="107" Click="btnLimpar_Click"/>
 
         <DataGrid x:Name="dtaLocacoes" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Height="250" Width="700" Margin="13,80,0,0" Padding="10">
             <DataGrid.Columns>

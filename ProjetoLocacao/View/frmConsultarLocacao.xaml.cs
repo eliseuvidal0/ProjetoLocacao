@@ -30,7 +30,7 @@ namespace ProjetoLocacao.View
                 {
 
                     Id = l.id.ToString(),
-                    Cliente = l.cliente.nome.ToString(),
+                    Cliente = l.cliente.nome,
                     Agente = l.agente.nome,
                     Veiculo = l.veiculo.modelo,
                     Locacao = status,

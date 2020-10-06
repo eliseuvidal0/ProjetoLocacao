@@ -62,6 +62,7 @@ namespace ProjetoLocacao.View
             txtNome.Clear();
             txtCpf.Clear();
             txtEmail.Clear();
+            txtNome.Focus();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ProjetoLocacao.DAL;
 using ProjetoLocacao.Model;
+using ProjetoLocacao.Utility;
 using System;
 using System.Windows;
 
@@ -34,10 +35,12 @@ namespace ProjetoLocacao.View
                     btnAlterar.IsEnabled = true;
                     btnRemover.IsEnabled = true;
                     btnBuscar.IsEnabled = false;
+                    txtCpf.IsEnabled = false;
                 }
                 else
                 {
                     MessageBox.Show("Funcionário não existente!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                    LimparFormulario();
                 }
             }
             else
@@ -55,13 +58,14 @@ namespace ProjetoLocacao.View
                 agente.email = txtEmail.Text;
                 AgenteDAO.Alterar(agente);
                 MessageBox.Show("Funcionário alterado com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
-                LimparFormulario();
 
                 txtNome.IsEnabled = false;
                 txtEmail.IsEnabled = false;
                 btnAlterar.IsEnabled = false;
                 btnRemover.IsEnabled = false;
                 btnBuscar.IsEnabled = true;
+                txtCpf.IsEnabled = true;
+                LimparFormulario();
             }
             else
             {
@@ -75,13 +79,14 @@ namespace ProjetoLocacao.View
             {
                 AgenteDAO.Remover(agente);
                 MessageBox.Show("Funcionário removido com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
-                LimparFormulario();
 
                 txtNome.IsEnabled = false;
                 txtEmail.IsEnabled = false;
                 btnAlterar.IsEnabled = false;
                 btnRemover.IsEnabled = false;
                 btnBuscar.IsEnabled = true;
+                txtCpf.IsEnabled = true;
+                LimparFormulario();
             }
             else
             {
@@ -94,6 +99,8 @@ namespace ProjetoLocacao.View
             txtNome.Clear();
             txtCpf.Clear();
             txtEmail.Clear();
+            txtCpf.Focus();
+
         }
     }
 }

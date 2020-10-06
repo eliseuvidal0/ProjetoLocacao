@@ -77,9 +77,9 @@ namespace ProjetoLocacao.View
             txtCpf.Clear();
             txtEmail.Clear();
             txtTelefone.Clear();
-            txtNascimento = new DatePicker();
-            txtNascimento.Text = " ";
-            txtCnh.Text = " ";
+            txtNascimento.SelectedDate = null;
+            //txtNascimento = new DatePicker();
+            txtCnh.SelectedIndex = -1;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ProjetoLocacao.Model;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetoLocacao.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,6 +42,7 @@ namespace ProjetoLocacao.DAL
         }
         public static void Remover(Cliente cliente)
         {
+            _context.Database.ExecuteSqlRaw("ALTER TABLE Locacoes NOCHECK CONSTRAINT FK_Locacoes_Clientes_clienteid");
             _context.clientes.Remove(cliente);
 
             _context.SaveChanges();

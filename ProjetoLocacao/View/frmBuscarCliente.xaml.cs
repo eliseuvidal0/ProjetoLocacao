@@ -38,10 +38,12 @@ namespace ProjetoLocacao.View
                     btnAlterar.IsEnabled = true;
                     btnRemover.IsEnabled = true;
                     btnBuscar.IsEnabled = false;
+                    txtCpf.IsEnabled = false;
                 }
                 else
                 {
                     MessageBox.Show("Cliente não existente!!!", "Cliente - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                    LimparFormulario();
                 }
             }
             else
@@ -61,7 +63,6 @@ namespace ProjetoLocacao.View
                 cliente.cnh = cboCnh.Text;
                 ClienteDAO.Alterar(cliente);
                 MessageBox.Show("Cliente alterado com sucesso!!!", "Cliente - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
-                LimparFormulario();
 
                 txtNome.IsEnabled = false;
                 txtEmail.IsEnabled = false;
@@ -70,6 +71,8 @@ namespace ProjetoLocacao.View
                 btnAlterar.IsEnabled = false;
                 btnRemover.IsEnabled = false;
                 btnBuscar.IsEnabled = true;
+                txtCpf.IsEnabled = true;
+                LimparFormulario();
             }
             else
             {
@@ -83,7 +86,6 @@ namespace ProjetoLocacao.View
             {
                 ClienteDAO.Remover(cliente);
                 MessageBox.Show("Cliente removido com sucesso!!!", "Funcionário - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
-                LimparFormulario();
 
                 txtNome.IsEnabled = false;
                 txtEmail.IsEnabled = false;
@@ -92,6 +94,8 @@ namespace ProjetoLocacao.View
                 btnAlterar.IsEnabled = false;
                 btnRemover.IsEnabled = false;
                 btnBuscar.IsEnabled = true;
+                txtCpf.IsEnabled = true;
+                LimparFormulario();
             }
             else
             {
@@ -105,6 +109,7 @@ namespace ProjetoLocacao.View
             txtEmail.Clear();
             txtTelefone.Clear();
             cboCnh.Text = " ";
+            txtCpf.Focus();
         }
     }
 }

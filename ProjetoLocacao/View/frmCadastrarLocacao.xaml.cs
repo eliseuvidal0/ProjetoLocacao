@@ -1,6 +1,7 @@
 ﻿using ProjetoLocacao.DAL;
 using ProjetoLocacao.Model;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 
 namespace ProjetoLocacao.View
@@ -50,18 +51,26 @@ namespace ProjetoLocacao.View
             };
             if (LocacaoDAO.ValidarCatCnh(locacao))
             {
-                if (LocacaoDAO.Salvar(locacao))
+                if (ValidarLocCli(locacao.cliente))
                 {
-                    int dias = locacao.previsaoEntrega.Day - locacao.criadoEm.Day;
-                    double total = locacao.veiculo.valorDiaria * dias;
-                    LimparFormulario();
-                    MessageBox.Show($"Locação Cadastrada no total de R$ {total}", "Locação - WPF",
-                                    MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (LocacaoDAO.Salvar(locacao))
+                    {
+                        int dias = locacao.previsaoEntrega.Day - locacao.criadoEm.Day;
+                        double total = locacao.veiculo.valorDiaria * dias;
+                        LimparFormulario();
+                        MessageBox.Show($"Locação Cadastrada no total de R$ {total}", "Locação - WPF",
+                                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veículo não está disponível!",
+                                "Locação - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Veículo não etá disponível!",
-                            "Locação - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Cliente informado já está com locação ativa!",
+                                "Locação - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
@@ -78,6 +87,22 @@ namespace ProjetoLocacao.View
             cboVeiculos.Text = " ";
             cboFormaPagamento.Text = " ";
 
+        }
+
+        private bool ValidarLocCli(Cliente cli)
+        {
+            int cont = 0;
+            List<Locacao> loc = LocacaoDAO.ListarLocPorCli(cli.cpf);
+            foreach (Locacao l in loc)
+            {
+                if (!l.devolvido)
+                {
+                    cont++;
+                }
+            }
+
+            if (cont != 0) { return false; }
+            return true;
         }
     }
 }

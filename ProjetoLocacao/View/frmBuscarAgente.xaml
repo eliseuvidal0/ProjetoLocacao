@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Buscar Agente de locação - WPF" Height="450" Width="800">
     <Grid>
-        <Label Content="CPF:" HorizontalAlignment="Left" Margin="140,40,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label Content="Nome:" HorizontalAlignment="Left" Margin="153,80,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="146,120,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="CPF:" HorizontalAlignment="Left" Margin="166,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="153,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="157,121,0,0" VerticalAlignment="Top"/>
 
         <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Margin="240,45,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="0" Grid.Column="1"/>
         <TextBox x:Name="txtNome" HorizontalAlignment="Left" Margin="240,85,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TabIndex="1" Grid.Column="1" IsEnabled="False"/>

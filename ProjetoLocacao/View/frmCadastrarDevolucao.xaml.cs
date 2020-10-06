@@ -35,7 +35,7 @@ namespace ProjetoLocacao.View
                 {
                     cliente = loc.cliente.nome,
                     veiculo = loc.veiculo.modelo,
-                    prevEntrega = loc.previsaoEntrega.ToString(),
+                    prevEntrega = loc.previsaoEntrega,
                     situacao = status
                 };
 

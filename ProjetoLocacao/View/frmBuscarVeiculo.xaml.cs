@@ -47,6 +47,7 @@ namespace ProjetoLocacao.View
                 else
                 {
                     MessageBox.Show("Veiculo não existente!!!", "Veiculo - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                    LimparFormulario();
                 }
             }
             else
@@ -61,11 +62,12 @@ namespace ProjetoLocacao.View
             {
                 VeiculoDAO.Remover(veiculo);
                 MessageBox.Show("Veiculo removido com sucesso!!!", "Veiculo - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
-                LimparFormulario();
+                
 
                 txtPlaca.IsEnabled = true;
                 btnBuscar.IsEnabled = true;
                 btnRemover.IsEnabled = false;
+                LimparFormulario();
             }
             else
             {
@@ -75,10 +77,12 @@ namespace ProjetoLocacao.View
         private void LimparFormulario()
         {
             txtPlaca.Clear();
+            txtTipo.Clear();
             txtMarca.Clear();
             txtModelo.Clear();
             txtCor.Clear();
             txtValorDiaria.Clear();
+            txtPlaca.Focus();
         }
     }
 }

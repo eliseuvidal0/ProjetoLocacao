@@ -44,10 +44,14 @@ namespace ProjetoLocacao.View
                     };
                     locacoes.Add(item);
                 }
-                txtCpf.Clear();
                 dtaLocacoes.ItemsSource = locacoes;
             }
         }
 
+        private void btnLimpar_Click(object sender, RoutedEventArgs e)
+        {
+            txtCpf.Clear();            
+            txtCpf.Focus();
+        }
     }
 }
