@@ -20,9 +20,12 @@ namespace ProjetoLocacao.View
 
         private void btnBuscar_Click_1(object sender, RoutedEventArgs e)
         {
+            List<Locacao> vazia = new List<Locacao>();
+            
             Cliente cli = ClienteDAO.BuscarCpf(txtCpf.Text);
             if (cli != null)
             {
+                locacoes.Clear();
                 string status;
                 foreach (Locacao loc in LocacaoDAO.ListarLocPorCli(txtCpf.Text))
                 {
@@ -46,11 +49,21 @@ namespace ProjetoLocacao.View
                 }
                 dtaLocacoes.ItemsSource = locacoes;
             }
+            else
+            {
+                MessageBox.Show("Cliente não possui locações cadastradas!",
+                                "Locação - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                txtCpf.Clear();
+                txtCpf.Focus();
+            }
         }
 
         private void btnLimpar_Click(object sender, RoutedEventArgs e)
         {
-            txtCpf.Clear();            
+            List<Locacao> vazia = new List<Locacao>();
+            txtCpf.Clear();
+            dtaLocacoes.ItemsSource = vazia;
+            dtaLocacoes.Items.Refresh();
             txtCpf.Focus();
         }
     }

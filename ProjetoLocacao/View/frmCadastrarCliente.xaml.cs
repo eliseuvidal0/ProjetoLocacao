@@ -80,6 +80,7 @@ namespace ProjetoLocacao.View
             txtNascimento.SelectedDate = null;
             //txtNascimento = new DatePicker();
             txtCnh.SelectedIndex = -1;
+            txtNome.Focus();
         }
     }
 }

@@ -63,6 +63,7 @@ namespace ProjetoLocacao.View
             txtModelo.Clear();
             txtCor.Clear();
             txtValorDiaria.Clear();
+            txtPlaca.Focus();
         }
     }
 }
