@@ -21,7 +21,7 @@ namespace ProjetoLocacao.View
         private void btnBuscar_Click_1(object sender, RoutedEventArgs e)
         {
             List<Locacao> vazia = new List<Locacao>();
-            
+
             Cliente cli = ClienteDAO.BuscarCpf(txtCpf.Text);
             if (cli != null)
             {

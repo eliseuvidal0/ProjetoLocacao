@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\katri\\Desktop\\Rafael Final\\4°Semestre\\Microsoft\\1\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj": {}
+    "C:\\Users\\Solução Informática\\Desktop\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\katri\\Desktop\\Rafael Final\\4°Semestre\\Microsoft\\1\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj": {
+    "C:\\Users\\Solução Informática\\Desktop\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\katri\\Desktop\\Rafael Final\\4°Semestre\\Microsoft\\1\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj",
+        "projectUniqueName": "C:\\Users\\Solução Informática\\Desktop\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj",
         "projectName": "ProjetoLocacao",
-        "projectPath": "C:\\Users\\katri\\Desktop\\Rafael Final\\4°Semestre\\Microsoft\\1\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj",
-        "packagesPath": "C:\\Users\\katri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\katri\\Desktop\\Rafael Final\\4°Semestre\\Microsoft\\1\\ProjetoLocacao\\ProjetoLocacao\\obj\\",
+        "projectPath": "C:\\Users\\Solução Informática\\Desktop\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao.csproj",
+        "packagesPath": "C:\\Users\\Solução Informática\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Solução Informática\\Desktop\\ProjetoLocacao\\ProjetoLocacao\\ProjetoLocacao\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\katri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Solução Informática\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

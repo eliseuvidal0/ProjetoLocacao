@@ -13,6 +13,10 @@ namespace ProjetoLocacao.View
         public frmConsultarLocacao()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
 
             string status;
             foreach (Locacao l in LocacaoDAO.Listar())
@@ -38,7 +42,7 @@ namespace ProjetoLocacao.View
                     Preco = x
                 });
             }
-
         }
+
     }
 }

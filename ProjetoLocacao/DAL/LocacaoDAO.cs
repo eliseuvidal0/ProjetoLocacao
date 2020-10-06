@@ -74,5 +74,10 @@ namespace ProjetoLocacao.DAL
             }
         }
 
+        public static void Alterar(Locacao locacao)
+        {
+            _context.locacoes.Update(locacao);
+            _context.SaveChanges();
+        }
     }
 }

@@ -6,8 +6,9 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\katri\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\katri\\.nuget\\packages"
+      "C:\\Users\\Solução Informática\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Solução Informática\\.nuget\\packages",
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

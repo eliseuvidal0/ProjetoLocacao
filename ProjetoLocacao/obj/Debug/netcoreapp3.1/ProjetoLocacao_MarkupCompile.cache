@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\katri\Desktop\Rafael Final\4°Semestre\Microsoft\1\ProjetoLocacao\ProjetoLocacao\obj\Debug\netcoreapp3.1\
+C:\Users\Solução Informática\Desktop\ProjetoLocacao\ProjetoLocacao\ProjetoLocacao\obj\Debug\netcoreapp3.1\
 ProjetoLocacao
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\katri\Desktop\Rafael Final\4°Semestre\Microsoft\1\ProjetoLocacao\ProjetoLocacao\App.xaml
+C:\Users\Solução Informática\Desktop\ProjetoLocacao\ProjetoLocacao\ProjetoLocacao\App.xaml
 141644026548
 
 38-264462302
-219-456467710
+219160805331
 View\frmBuscarAgente.xaml;View\frmBuscarCliente.xaml;View\frmBuscarLocacao.xaml;View\frmBuscarVeiculo.xaml;View\frmCadastrarAgente.xaml;View\frmCadastrarCliente.xaml;View\frmCadastrarDevolucao.xaml;View\frmCadastrarLocacao.xaml;View\frmCadastrarVeiculo.xaml;View\frmConsultarAgente.xaml;View\frmConsultarCliente.xaml;View\frmConsultarLocacao.xaml;View\frmConsultarVeiculo.xaml;View\frmPrincipal.xaml;
 
-False
+True
 

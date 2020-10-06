@@ -1,16 +1,7 @@
 ﻿using ProjetoLocacao.DAL;
 using ProjetoLocacao.Model;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace ProjetoLocacao.View
 {
@@ -58,21 +49,20 @@ namespace ProjetoLocacao.View
 
         private void btnRemover_Click(object sender, RoutedEventArgs e)
         {
-            if (veiculo != null)
+            if (!veiculo.locado)
             {
                 VeiculoDAO.Remover(veiculo);
                 MessageBox.Show("Veiculo removido com sucesso!!!", "Veiculo - WPF", MessageBoxButton.OK, MessageBoxImage.Information);
-                
 
-                txtPlaca.IsEnabled = true;
-                btnBuscar.IsEnabled = true;
-                btnRemover.IsEnabled = false;
-                LimparFormulario();
             }
             else
             {
-                MessageBox.Show("Veiculo não foi removido!!!", "Veiculo - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Veiculo não pode ser removido pois está locado!!!", "Veiculo - WPF", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+            txtPlaca.IsEnabled = true;
+            btnBuscar.IsEnabled = true;
+            btnRemover.IsEnabled = false;
+            LimparFormulario();
         }
         private void LimparFormulario()
         {

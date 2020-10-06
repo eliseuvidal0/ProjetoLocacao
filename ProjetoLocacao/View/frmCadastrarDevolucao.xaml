@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLocacao.View"
         mc:Ignorable="d"
-        Title="Cadastro de Devolução - WPF" Height="450" Width="850" FontSize="16" Loaded="Window_Loaded">
+        Title="Cadastro de Devolução - WPF" Height="450" Width="880" FontSize="16" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="dtaLocacoes" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Height="350" Width="700" Margin="13,30,0,0" Padding="10">
+        <DataGrid x:Name="dtaLocacoes" AutoGenerateColumns="False" HorizontalAlignment="Center" VerticalAlignment="Top" Height="350" Width="800" Margin="13,30,0,0" Padding="10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Cliente" Width="1*"
                             Binding="{Binding cliente}"/>
@@ -17,14 +17,15 @@
                             Binding="{Binding prevEntrega}"/>
                 <DataGridTextColumn Header="Estado" Width="1*"
                             Binding="{Binding situacao}"/>
-                <DataGridHyperlinkColumn x:Name="btnEntregar" Width="0.5*" Header="Entregar" Binding="{Binding veiculoId}" ContentBinding="{Binding Entregar}">
-                    <DataGridHyperlinkColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="Tag" Value="veiculoId"/>
 
-                        </Style>
-                    </DataGridHyperlinkColumn.ElementStyle>
-                </DataGridHyperlinkColumn>
+                <DataGridTemplateColumn x:Name="columnEntregar" Header="Entregar"  Width="0.5*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Button_Click">Entregar</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
             </DataGrid.Columns>
         </DataGrid>
 

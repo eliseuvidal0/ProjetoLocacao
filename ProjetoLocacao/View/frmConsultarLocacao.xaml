@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProjetoLocacao.View"
         mc:Ignorable="d"
-        Title="Todas Locações - WPF" Height="450" Width="800">
+        Title="Todas Locações - WPF" Height="450" Width="800" Loaded="Window_Loaded" Closed="Window_Closed">
     <Grid>
         <DataGrid x:Name="dtaLocacao" IsEnabled="False" HorizontalAlignment="Center" VerticalAlignment="Top" Height="350" Width="700" Margin="30" Padding="10">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="lstId" Header="Id" Binding="{Binding Id}" Width="1*"/>
                 <DataGridTextColumn x:Name="lstCliente" Header="Cliente" Binding="{Binding Cliente}" Width="1*"/>
                 <DataGridTextColumn x:Name="lstAgente" Header="Agente" Binding="{Binding Agente}" Width="1*"/>
-                <DataGridTextColumn x:Name="lstVeiculo" Header="Veiculo" Binding="{Binding Veiculo}" Width="1*"/>
+                <DataGridTextColumn x:Name="lstVeiculo"  Header="Veiculo" Binding="{Binding Veiculo}" Width="1*"/>
                 <DataGridTextColumn x:Name="lstDevolvido" Header="Estado" Binding="{Binding Locacao}" Width="1*"/>
                 <DataGridTextColumn x:Name="lstPrevisaoEntrega" Header="Previsão de Entrega" Binding="{Binding Previsao}" Width="1*"/>
                 <DataGridTextColumn x:Name="lstPreco" Header="Preço da locação" Binding="{Binding Preco}" Width="1*"/>
